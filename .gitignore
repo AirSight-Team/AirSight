@@ -216,3 +216,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+model_ready_traffic.csv
+model_ready_weather.csv
