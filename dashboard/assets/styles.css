@@ -1,0 +1,211 @@
+:root {
+    --bg: #f8fafd;
+    --navy: #182b43;
+    --nav-active: #2b527c;
+    --text: #12284a;
+    --muted: #60789b;
+    --border: #dce4ef;
+    --shadow: 0 3px 10px rgba(13, 20, 41, 0.07);
+    --high-bg: #fffdf8;
+    --high-badge: #fde9c8;
+    --high-text: #ef8700;
+    --extreme-bg: #fff9fa;
+    --extreme-border: #f0b7c1;
+    --extreme-badge: #f8d7df;
+    --extreme-text: #f5222d;
+    --normal-badge: #e8eef6;
+    --normal-text: #587092;
+}
+
+html, body, [class*="css"] {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.stApp { background: var(--bg); }
+
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+[data-testid="stDecoration"],
+#MainMenu,
+footer {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+[data-testid="stAppViewContainer"] > .main { padding-top: 0 !important; }
+
+[data-testid="stSidebar"] {
+    background: var(--navy);
+    width: 254px !important;
+    min-width: 254px !important;
+    border-right: 0 !important;
+}
+
+[data-testid="stSidebar"] > div:first-child { width: 254px !important; }
+[data-testid="stSidebar"] [data-testid="stSidebarContent"] { padding: 0 14px !important; }
+[data-testid="stSidebarCollapseButton"] { display: none !important; }
+
+.block-container {
+    max-width: 1282px;
+    padding: 25px 28px 42px 28px !important;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 46px 15px 34px 15px;
+}
+.brand-icon {
+    color: #8dc8ff;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1;
+}
+.brand-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.nav-item {
+    height: 48px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 18px;
+    color: #e3ebf4;
+    font-size: 14px;
+    font-weight: 500;
+}
+.nav-item.active {
+    background: #27486d;
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(217, 236, 255, 0.04);
+}
+.nav-icon {
+    color: #d9ecff;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 8px 13px 8px;
+}
+.page-header h1 { color: var(--text); font-size: 34px; font-weight: 600; line-height: 1.2; margin: 0 0 6px 0; }
+.page-header p { color: var(--muted); font-size: 17px; margin: 0; }
+.header-time { text-align: left; min-width: 170px; margin-top: 7px; }
+.header-time-label { color: #587092; font-size: 12px; margin-bottom: 6px; }
+.header-time-value { color: var(--text); font-size: 12px; font-weight: 500; padding-left: 23px; }
+.clock-icon { color: #57769a; font-size: 15px; margin-right: 7px; }
+
+.selector-label {
+    color: #6b7d93;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 0 8px 17px;
+    position: relative;
+    z-index: 2;
+}
+[data-testid="stSelectbox"] { margin: 0 0 13px 0; }
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    min-height: 58px !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--border) !important;
+    background: #fff !important;
+    color: #16304f !important;
+    box-shadow: none !important;
+    padding: 15px 11px 0 11px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div:focus-within {
+    border-color: #9fb2c9 !important;
+    box-shadow: 0 0 0 1px rgba(41,75,112,.08) !important;
+}
+
+.forecast-card {
+    height: 318px;
+    border-radius: 16px;
+    padding: 22px 24px 19px 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    margin-bottom: 13px;
+    overflow: hidden;
+}
+.forecast-card.normal { background: #fff; }
+.forecast-card.high { background: var(--high-bg); }
+.forecast-card.extreme { background: var(--extreme-bg); border: 1.5px solid var(--extreme-border); }
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.horizon { color: var(--text); font-size: 16px; font-weight: 600; }
+.target-time { color: var(--text); font-size: 28px; font-weight: 600; margin-top: 1px; line-height: 1.25; }
+.target-date { color: var(--muted); font-size: 14px; margin-top: 0; }
+.pressure-badge { min-width: 136px; height: 56px; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 17px; font-weight: 600; }
+.pressure-badge.normal { background: var(--normal-badge); color: var(--normal-text); }
+.pressure-badge.high { background: var(--high-badge); color: var(--high-text); }
+.pressure-badge.extreme { background: var(--extreme-badge); color: var(--extreme-text); }
+
+.movement-row { display: flex; align-items: baseline; margin-top: 24px; gap: 12px; }
+.movement-icon { color: #264868; font-size: 31px; width: 56px; line-height: 1; }
+.movement-number { color: var(--text); font-size: 31px; font-weight: 600; line-height: 1; }
+.movement-label { color: #587092; font-size: 15px; }
+.deviation { margin-left: 68px; margin-top: 6px; color: #587092; font-size: 12px; }
+.deviation.high { color: #587092; }
+.deviation.extreme { color: var(--extreme-text); }
+.card-divider { height: 1px; background: #e4e9ef; margin: 10px 2px 10px 2px; }
+.recommendation-row { display: grid; grid-template-columns: 42px 1fr; gap: 12px; }
+.recommendation-icon { font-size: 24px; font-weight: 500; line-height: 1.15; }
+.recommendation-icon.normal { color: #587092; }
+.recommendation-icon.high { color: var(--high-text); }
+.recommendation-icon.extreme { color: var(--extreme-text); }
+.recommendation-title { color: var(--text); font-size: 15px; font-weight: 600; margin-bottom: 7px; }
+.recommendation-text { color: #304761; font-size: 13px; line-height: 1.32; }
+
+.outlook-panel, .context-panel, .legend-panel { background: #fff; border-radius: 16px; box-shadow: var(--shadow); }
+.outlook-panel { min-height: 102px; padding: 15px 20px; margin: 1px 8px 20px 8px; box-sizing: border-box; }
+.panel-title { color: var(--text); font-size: 16px; font-weight: 600; }
+.panel-subtitle { color: var(--muted); font-size: 12px; margin-top: 5px; }
+.outlook-headline { font-size: 17px; font-weight: 600; margin-top: 2px; }
+.outlook-headline.normal { color: var(--normal-text); }
+.outlook-headline.high { color: #b66a00; }
+.outlook-headline.extreme { color: #a33b56; }
+.outlook-detail { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+.context-panel, .legend-panel { height: 259px; padding: 17px 20px; box-sizing: border-box; overflow: hidden; }
+.context-header, .context-row { display: grid; grid-template-columns: .72fr 1fr 1fr 1.45fr; align-items: center; column-gap: 8px; }
+.context-header { color: var(--muted); font-size: 12px; font-weight: 700; margin: 20px 14px 8px 14px; }
+.context-row { min-height: 36px; background: #f8fafd; border-radius: 9px; margin-bottom: 8px; padding: 0 14px; color: #334b67; font-size: 12px; }
+.context-time { color: var(--text); font-size: 13px; font-weight: 600; }
+.typical-value { color: #60789b; }
+.context-status { font-weight: 500; }
+.context-status.above-typical { color: var(--extreme-text); }
+.context-status.below-typical { color: #3d77a8; }
+
+.legend-row { display: grid; grid-template-columns: 123px 1fr; align-items: center; gap: 16px; margin-top: 11px; }
+.legend-badge { height: 33px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; }
+.legend-badge.normal { background: var(--normal-badge); color: var(--normal-text); }
+.legend-badge.high { background: var(--high-badge); color: var(--high-text); }
+.legend-badge.extreme { background: var(--extreme-badge); color: var(--extreme-text); }
+.legend-copy { color: #60789b; font-size: 12px; }
+
+/* Tighten Streamlit's own wrappers around our HTML blocks. */
+[data-testid="stMarkdownContainer"] p { margin-bottom: 0; }
+[data-testid="column"] > div { gap: 0 !important; }
+
+@media (max-width: 1100px) {
+    .block-container { padding-left: 20px !important; padding-right: 20px !important; }
+    .pressure-badge { min-width: 105px; }
+    .recommendation-text { font-size: 12px; }
+}
